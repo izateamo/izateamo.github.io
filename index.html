@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>1 Aninho ❤️</title>
+    <style id="css">
+        body {
+            background-color: #F0F;
+            font-family: "Nunito", sans-serif;
+        }
+        body,
+        html {
+            overflow-x: hidden !important;
+        }
+        .blurb h2 {
+            color: #F00;
+            font-weight: 100;
+            font-size: 2.5rem;
+        }
+        .blurb p {
+            color: #F0F;
+            font-weight: 100;
+            font-size: 1.125;
+            line-height: 2;
+        }
+        .content {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        #navigationBar {
+            font-size: 1.5rem;
+            font-weight: 100;
+        }
+        #navigationBar .nav-link {
+            color: #FFF;
+        }
+        #navigationBar .nav-link:hover {
+            color: #F00;
+        }
+        #navigationBar .navbar-brand {
+            color: #F00;
+            font-size: 1.5rem;
+        }
+        #headingGroup span {
+            color: #F00;
+        }
+        #headingGroup h1 {
+            font-weight: 100;
+            font-size: 4rem;
+        }
+        #saxoAudioButton {
+            color: #000;
+            -webkit-text-stroke-width: .01em;
+            -webkit-text-fill-color: #0F0;
+            text-decoration-color: #000;
+            background-color: #C8FFC8;
+        }
+        #nao {
+            color: #000;
+            -webkit-text-stroke-width: .01em;
+            -webkit-text-fill-color: #F00;
+            text-decoration-color: #000;
+            background-color: #FFC8C8;
+        }
+        #pedidoAceito {
+            margin-top: 2.5em;
+        }
+        @media(max-width: 786px) {
+
+            body,
+            html {
+                overflow-x: hidden !important;
+            }
+
+            #headingGroup h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body id="pageBody">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark" data-bs-theme="dark" id="navigationBar">
+        <div class="container-fluid">
+            <a class="navbar-brand" onclick="saxoAudioPlay.play();">❤️</a>
+    </nav>
+    <div class="d-grid gap-2 col-10 mx-auto" id="divPedido">
+        <h3 id="pedido">Você, Izabelle Letícia Venâncio Gonçalves, aceita ser noiva
+            do Lucas do
+            Carmo Neiva ao invés de continuar sendo só namorada, na data de 03 de Fevereiro de 2024, com o intuito de se
+            casarem também nesta data, porém no ano de 2026?</h3>
+        <audio src="https://github.com/izateamo/izateamo.github.io/raw/main/Saxofone.mp3" autoplay loop id="saxoAudio"></audio>
+        <button onclick="playAudio();" type="button" class="btn btn-success btn-lg" id="saxoAudioButton">Sim</button>
+        <button onclick="naoFunc()" type="button" class="btn btn-danger btn-lg" id="nao">Não</button>
+    </div class="d-grid gap-2 col-10 mx-auto" id="divSim">
+    <div id="pedidoAceito"></div>
+    <div id="javaScript">
+        <script>
+            const saxoAudioPlay = document.getElementById("saxoAudio");
+            const saxoButton = document.getElementById("saxoAudioButton");
+            const naoButton = document.getElementById("nao");
+            const bodyHtml = document.getElementById("pageBody");
+            const acceptedRequest = `<h3 class="d-grid gap-2 col-10 mx-auto" id="pedido"> Ela aceitou ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ <br>Feliz um ano de namoro mo, te amo muito e aproveita que é meio que o último hehe...</h3>`
+            const acceptedPage = `
+            <section class="container-fluid  px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div id="headingGroup" class="text-center d-none d-lg-block mt-5">
+                        <h1 class="">EU <span>TE </span>AMO <span>! </span>❤️</h1>
+                        <h1 class="">EU <span>TE </span>AMO <span>! </span>❤️</h1>
+                        <h1 class="">EU <span>TE </span>AMO <span>! </span>❤️</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/2.jpg" alt="2" class="img-fluid">
+                </div>
+            </div>
+        </section>
+        <section class="container-fluid px-0">
+            <div class="row align-items-center content">
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/1.jpg" alt="1" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>INTRODUÇÃO... ❤️</h2>
+                            <p class="lead">
+                                Uma história de muito amor e carinho, que graças a Deus, agora tá dando tudo certo conforme alguns de nossos planinhos pra nos casar logo. <br>Mas como ela me odiava a não muito tempo atrás, a história só começou mesmo em meados de janeiro de 2022, com o primeiro evento presencial assistindo o gatrix, por sinal muito bom.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>26 DE JANEIRO... ❤️</h2>
+                            <p class="lead">
+                                Algum tempo depois, após algumas sessões de filmes e um aperto de mão e um braço, foi de grande importância a permanência na sessão do filme moonfall na data de 18 de janeiro, onde de fato tudo começou.<br>Acho muito fofo o fato de que ela me &gt;:( falando que num ia namora co eu e mesmo assim acho que no mesmo dia comprei nossas alianças e na outra semana já tava como? Na casa da sogra deixando a aliança cair no chaõ hehehe...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/3.jpg" alt="3" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>CONFLITOS INTERNOS... ❤️</h2>
+                            <p class="lead">
+                                Infelizmente o começo do relacionamento, foi muito danoso para ambas as partes, envolvendo algumas questões que não deveriam ser abordadas antes do casamento, o que felizmente não resultou em uma permanência no erro condenando nossas almas, graças a imensurável misericórdia do nosso Salvador.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/4.jpg" alt="4" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>COMEÇANDO DE FATO... ❤️</h2>
+                            <p class="lead">
+                                Depois de alguns meses de convivência, fomos aprendendo que tinhamos mais gostos em comum do que imaginávamos, finalmente, dentro de um relacionamento saudável.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/5.jpg" alt="5" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>ESTUDOS... ❤️</h2>
+                            <p class="lead">
+                                Um caco bacharelando em fios e uma linda beldade maravilhosa cursando técnico em gambiarra, um casal de muitas emoções e eletricidade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/6.jpg" alt="6" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>TRABALHOS... ❤️</h2>
+                            <p class="lead">
+                                Minha incrível quase noiva (agora de fato quase, o tempo foi reduzido pela metade hehe) começou como estágio depois que eu ja tava no meu estágio e foi contratada como? Chefe... enquanto isso eu ainda demorei alguns meses pra poder finalmente ser efetivado, infelizmente ainda sem capacidade técnica suficiente pra ser chefe igual meu nene, por enquanto só chefe de cozinha mesmo pra fazer guloseimas pra nois nhac nhac totoso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/7.jpg" alt="7" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>MUITO LINDA... ❤️</h2>
+                            <p class="lead">
+                                Dá vontade de aperta e num soltar mais, não vejo a hora de casar logo pra poder fazer tudo que der pra fazer junto juntinho com meu mu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/8.jpg" alt="8" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>TE AMO MUITO... ❤️</h2>
+                            <p class="lead">
+                                Feliz aniversário de namoro amor, eu te amo muuuitão demais, aguardo anciosamente para ver a senhorita vestida com uma cortina branca e vindo em minha direção pra gente troca nossos anéis de cor e de mão, te amo lindona, continuo salientando que assim que nos casarmos acabarão suas várias noites acordadas por longos horários noturnos, onde vai recebe muito abraço até ronca com eu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/9.jpg" alt="9" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>MINHA PRINCESA ❤️</h2>
+                            <p class="lead">
+                                Olha que maravilhosa que é minha linda pré-noiva, ver ela sorrindo desse jeito me deixa feliz pq meu mu é muuuito linda e as vezes fica chateada comigo pq eu sou bobão, mas eu me esforço pra que meu mu fique assim mostrando esses dentão lindo, dá vontade de mode.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/10.jpg" alt="10" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>RONCA COM MO... ❤️</h2>
+                            <p class="lead">
+                                Dá vontade de deita com mo pa mimi o tempo todo, impressionante como eu fico mais tranquilo quando não preciso perguntar mu oq ela tá fazendo pq ela tá literalmente do meu lado deitada co eu e não tem como não me mandar mensagem quando chega em casa mim deixando eu doido kkkkkkkkkkkk te amo mo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/11.jpg" alt="11" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>26/02/2026 ❤️</h2>
+                            <p class="lead">
+                                Que problema tem casar numa quinta-feira? a data pode ser considerada como simbólica para nós por ser o dia q eu deixei a aliança cair na casa da minha sogra, quem sabe posso até deixar a aliança de esposa cair no chão só pra te lembrar como tudo começou hehehe, te amo mu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/12.jpg" alt="12" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>ATÉ QUE A MORTE NOS SEPARE... ❤️</h2>
+                            <p class="lead">
+                                Agora o objetivo é esse, mas pensando bem, não é uma coisa tão ruim um de nós perder o outro pois o outro vai estar em um lugar melhor, por isso quero aproveitar todo o tempo que eu poder aproveitar do seu lado mo, te dando muuuito abraço, muuuito bejinho, muuuito carinho e depois que a gente casa te da muuuito minino hehehe, brincadeira kkkk, ainda temos bastante tempo para conversarmos sobre nossos possíveis descententes, mas o importante é que eu te amo muuuito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/13.jpg" alt="13" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>DUAS PIZZA PA MO... ❤️</h2>
+                            <p class="lead">
+                                Só lembrando mais um momento chique também eu e meu mo mandando duas pizza pra dentro, tava bão nhac.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/c1.jpg" alt="c2" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>BROWNIE COM SORVETE... ❤️</h2>
+                            <p class="lead">
+                                O meu incentivo pra aprender a fazer receitas de doces depois que experimentei bauni com sorvete junto com meu mu, slc tava bão demais kkkk, só perde pro que a gente faz hehe, te amo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/c3.jpg" alt="c3" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center order-1 order-md-2">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>DIA DOS NAMORADOS... ❤️</h2>
+                            <p class="lead">
+                                Ainda não era uma época boa no relacionamento por conta do comportamento de ambos, mas querendo ou não, foi o nosso primeiro dia dos namorados namorando, por ambas as partes! Dessa vez eu dei sorte em relação aos seus 57 ex (só dos que você conseguiu lembrar, os outros não foram contabilizados ainda né).<br>Brincadeiras a parte, obrigado pelo carinho, amo você muuuitão.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/p1.jpg" alt="p1" class="img-fluid">
+                </div>
+            </div>
+            <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                            <h2>FELIZ PRIMEIRO ANO ME ATURANDO... VAI TER QUE AGUENTAR AGORA ATÉ UM DE NÓS DOIS IR SE ENCONTRAR COM JESUS! ❤️</h2>
+                            <p class="lead">
+                                Te amo mo, espero que tenha gostado, fiz com todo o carinho aproveitando os conhecimentos adquiridos no ano passado, realmente foram úteis pra alguma coisa kkkk, te amo! <br>Hoje, no dia que estou terminando os preparativos do site pra fazer um QRCode pra imprimir e colocar na sua cesta, é dia 28/12/22, to escrevendo as cartinhas do lado das fotos depois de ter criado os botões e os trem tudo que tão aparecendo na tela kkkk, ontem mesmo eu tava em chamada com você falando sobre um trem q achei q n tinha como fazer, pois é, é colocar a musiquinha pra tocar assim que você confirmasse sua escolha hehehe. <br>Só vai faltar depois pegar as coisas que tão na caixa em cima do meu guarda-roupa e montar a sua cesta, mas isso vou deixar pra quando a data estiver mais próxima pra evitar de vc ver seu presente antes da hora hehe. <br>Te amo mo, obrigado por tudo ❤️
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-1">
+                    <img src="https://github.com/izateamo/izateamo.github.io/raw/main/Imagens/p2.jpg" alt="p2" class="img-fluid">
+                </div>
+            </div>
+        </section>
+                                `
+            function naoFunc() {
+                alert("Resposta errada, tente novamente após clicar em OK");
+                document.location.reload();
+            }
+            function playAudio() {
+                alert("Eu te amo muuuito mo, finalmente 1 ano de namoro hihihi mais 1 a gente noiva e depois vai faltar só mais 2 pra casar, espero que goste do seu presente, feito com muito carinho <3");
+                saxoAudioPlay.pause();
+                saxoAudioPlay.currentTime = 0;
+                saxoAudioPlay.play();
+                naoButton.remove();
+                saxoButton.remove();
+                loadPage();
+            }
+            function loadPage() {
+                document.getElementById("pedido").innerHTML = acceptedRequest;
+                document.getElementById("pedidoAceito").innerHTML = acceptedPage;
+                bodyHtml.classList.add("bg-danger-subtle");
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
